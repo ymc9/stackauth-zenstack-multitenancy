@@ -1,0 +1,43 @@
+{
+  "name": "zenstack-stackauth-nextjs-multitenant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npx zenstack generate && npm run db:push && next build",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "start": "next start",
+    "up": "npm i -D zenstack@latest && npm i @zenstackhq/runtime@latest"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "@stackframe/stack": "^2.6.29",
+    "@zenstackhq/runtime": "^2.10.0",
+    "next": "^15.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.3",
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^18.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.54.0",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "prisma": "^6.0.1",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.7.2",
+    "zenstack": "^2.10.0"
+  },
+  "packageManager": "npm@9.5.1"
+}
