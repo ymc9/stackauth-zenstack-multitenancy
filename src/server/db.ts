@@ -22,8 +22,11 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
  */
 export async function getUserDb() {
   const stackAuthUser = await stackServerApp.getUser();
-  const team = stackAuthUser?.selectedTeam;
-  const perm = team && (await stackAuthUser.getPermission(team, "admin"));
+  const currentTeam = stackAuthUser?.selectedTeam;
+
+  // by default StackAuth's team members have "admin" or "member" role
+  const perm =
+    currentTeam && (await stackAuthUser.getPermission(currentTeam, "admin"));
 
   const user = stackAuthUser
     ? {
